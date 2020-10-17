@@ -1,0 +1,12 @@
+node_modules
+public/wp-config.php
+# public/wp-content/uploads
+
+public/wp-admin/error_log
+public/wp-includes/error_log
+public/wp-content/upgrade/
+
+cache
+error_log
+sitemap.xml
+sitemap.xml.gz

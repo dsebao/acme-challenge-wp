@@ -1,0 +1,52 @@
+.component-card {
+	background-color: $gray-300;
+	border-radius: $border-radius;
+	position: relative;
+	overflow: hidden;
+	min-width: 300px;
+	transition: all 0.3s ease-in-out;
+	.component-card__link {
+		display: block;
+		position: relative;
+		z-index: 0;
+		overflow: hidden;
+		.component-card__image {
+			display: block;
+			width: 100%;
+			transition: all 0.3s ease-in-out;
+		}
+	}
+	&:hover {
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+		.component-card__image {
+			transform: scale(1.05, 1.05);
+		}
+	}
+	.component-card__data {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: auto;
+		z-index: 1;
+		.component-card__content {
+			background: $gray-400;
+			padding: 10px;
+			.component-card__avatar {
+				margin-right: 10px;
+				width: 46px;
+				height: 46px;
+			}
+			.component-card__username {
+				font-size: 16px;
+				font-weight: 500;
+				margin: 5px 0;
+				color: $gray-800;
+			}
+			.component-card__tag {
+				font-weight: 400;
+				font-size: 14px;
+			}
+		}
+	}
+}

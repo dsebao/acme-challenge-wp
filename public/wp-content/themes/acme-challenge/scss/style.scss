@@ -1,0 +1,14 @@
+/*!
+Theme Name: Acme
+Author: Sebastian Ortiz
+Author URI: https://dsebao.github.io
+Description: Custom WordPress theme created by @dsebao
+Version:      1.0.0
+*/
+
+@import "./base/base";
+@import "./utils/utils";
+@import "./bs4/bootstrap";
+
+@import "./components/components";
+@import "./theme/theme";

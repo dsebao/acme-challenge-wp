@@ -1,0 +1,24 @@
+#mainNavbar {
+	.navbar-toggler {
+		background: $primary;
+		border: none;
+		padding: 3px 7px 6px;
+		.navbar-toggler-icon {
+			width: 1.2rem;
+			height: 1.2rem;
+			background-image: url("data:image/svg+xml,%0A%3Csvg width='19px' height='14px' viewBox='0 0 19 14' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3C!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch --%3E%3Cdesc%3ECreated with Sketch.%3C/desc%3E%3Cdefs%3E%3C/defs%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='Home---mobile' transform='translate(-331.000000, -18.000000)' fill='%23FFFFFF' fill-rule='nonzero'%3E%3Cg id='Home_-_mobile' transform='translate(-4.000000, -23.000000)'%3E%3Cg id='menu_button' transform='translate(329.000000, 35.000000)'%3E%3Cg id='Grupo_5' transform='translate(6.000000, 6.000000)'%3E%3Crect id='Rectángulo_15' x='0' y='0' width='19' height='2' rx='1'%3E%3C/rect%3E%3Crect id='Rectángulo_16' x='0' y='6' width='13' height='2' rx='1'%3E%3C/rect%3E%3Crect id='Rectángulo_17' x='0' y='12' width='19' height='2' rx='1'%3E%3C/rect%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+		}
+	}
+	@include respond-below(sm) {
+		#mainNav {
+			.btn {
+				width: 100%;
+			}
+		}
+		.navbar-brand {
+			img {
+				width: 125px;
+			}
+		}
+	}
+}

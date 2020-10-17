@@ -1,0 +1,15 @@
+.btn {
+	border-radius: $border-radius;
+	font-weight: 500;
+	padding: 6px 18px;
+	font-size: 1rem;
+	&.btn-lg {
+	}
+	&.btn-primary {
+	}
+}
+
+.btn-text {
+	color: $primary;
+	font-size: 20px;
+}
