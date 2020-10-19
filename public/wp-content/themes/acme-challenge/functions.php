@@ -32,9 +32,8 @@ foreach ($theme_includes as $file) {
  */
 
 
-/**
- * Resize of image media size for square ratio
- */
+
+//Resize of image media size for square ratio
 update_option('medium_size_w', 600);
 update_option('medium_size_h', 600);
 
@@ -44,6 +43,16 @@ function get_hashtag($postid)
 {
 	$hashes = wp_get_post_terms($postid, 'hashtag');
 	foreach ($hashes as $hash) {
-		return '<a href="' . home_url() . '/hashtag/' . $hash->slug . '" class="hashtag">' . $hash->name . '</a>';
+		return '<a href="' . home_url() . '/hashtag/' . $hash->slug . '" class="hashtag">#' . $hash->name . '</a>';
 	}
 }
+
+//Change url search for taxonomies
+function wpb_change_search_url()
+{
+	if (!empty($_GET['s'])) {
+		wp_redirect(home_url("/hashtag/") . urlencode(get_query_var('s')));
+		exit();
+	}
+}
+add_action('template_redirect', 'wpb_change_search_url');
