@@ -18,17 +18,22 @@ get_template_part('template-parts/hero', 'main');
             <?php get_template_part('template-parts/home', 'search'); ?>
         </div>
 
-        <div class="row">
+        <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
+
+        <div class="row js-container-posts">
             <?php
+
+            global $wp_query;
 
             $q = array(
                 'post_type' => 'gallery',
                 'posts_per_page' => get_option('posts_per_page'),
+                'paged' => $paged
             );
 
-            $the_query = new WP_Query($q);
+            $wp_query = new WP_Query($q);
 
-            if ($the_query->have_posts()) : while ($the_query->have_posts()) : $the_query->the_post();
+            if ($wp_query->have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
             ?>
                     <div class="col-lg-4 col-md-6 mb-5">
                         <?php get_template_part('template-parts/card', 'gallery'); ?>
@@ -44,8 +49,9 @@ get_template_part('template-parts/hero', 'main');
 
         </div>
 
+
         <div class="load-more text-center my-5">
-            <a href="" class="btn btn-text js-load-more-posts">Load More</a>
+            <a href="" data-page="<?php echo $paged; ?>" data-max="<?php echo $wp_query->max_num_pages; ?>" class="btn btn-text js-load-more">Load More</a>
         </div>
 
     </div>

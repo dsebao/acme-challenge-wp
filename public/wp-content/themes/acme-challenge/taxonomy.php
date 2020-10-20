@@ -18,9 +18,14 @@ get_template_part('template-parts/hero', 'main');
             <?php get_template_part('template-parts/home', 'search'); ?>
         </div>
 
-        <div class="row">
+        <div class="row js-container-posts">
 
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <?php
+            global $wp_query;
+
+            $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+
+            if (have_posts()) : while (have_posts()) : the_post(); ?>
                     <div class="col-lg-4 col-md-6 mb-5">
                         <?php get_template_part('template-parts/card', 'gallery'); ?>
                     </div>
@@ -36,8 +41,9 @@ get_template_part('template-parts/hero', 'main');
         </div>
 
         <div class="load-more text-center my-5">
-            <a href="" class="btn btn-text js-load-more-posts">Load More</a>
+            <a href="" data-page="<?php echo $paged; ?>" data-max="<?php echo $wp_query->max_num_pages; ?>" class="btn btn-text js-load-more">Load More</a>
         </div>
+
 
     </div>
 </section>

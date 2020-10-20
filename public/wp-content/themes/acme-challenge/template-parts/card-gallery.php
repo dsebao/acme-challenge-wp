@@ -1,12 +1,11 @@
 <div class="component-card">
-    <a href="" class="component-card__link">
-
-        <?php if (has_post_thumbnail()) {
-            $imgurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
-            $imgurl = $imgurl[0];
-        } else {
-            $imgurl =  get_template_directory_uri() . '/images/grey-placeholder.jpg';
-        } ?>
+    <?php if (has_post_thumbnail()) {
+        $imgurl = wp_get_attachment_image_src(get_post_thumbnail_id(), 'medium');
+        $imgurl = $imgurl[0];
+    } else {
+        $imgurl =  get_template_directory_uri() . '/images/grey-placeholder.jpg';
+    } ?>
+    <a href="<?php echo $imgurl; ?>" class="component-card__link glightbox">
 
         <img src="<?php echo $imgurl; ?>" alt="<?php the_title(); ?>" class="component-card__image" />
 

@@ -1,7 +1,7 @@
 node_modules
 public/wp-config.php
-# public/wp-content/uploads
-
+public/wp-content/uploads
+sql
 public/wp-admin/error_log
 public/wp-includes/error_log
 public/wp-content/upgrade/

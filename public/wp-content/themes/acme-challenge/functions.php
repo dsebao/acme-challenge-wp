@@ -18,6 +18,7 @@ $theme_includes = array(
 	'/post-types.php',
 	'/metaboxes.php',
 	'/taxonomies.php',
+	'/ajax.php',
 	'/theme_settings.php', // Initialize theme default settings.
 	'/wp_bootstrap_nav.php',
 );

@@ -32,23 +32,23 @@ gulp.task('assets', function (done) {
     // Copy all JS files
     gulp
         .src('./node_modules/jquery/dist/jquery.js')
-        .pipe(gulp.dest(themePath + '/js/core/jquery'));
+        .pipe(gulp.dest(themePath + 'js/core/jquery'));
 
     gulp
         .src('./node_modules/bootstrap/dist/js/**/*.js')
-        .pipe(gulp.dest(themePath + '/js/core/bootstrap4'));
+        .pipe(gulp.dest(themePath + 'js/core/bootstrap4'));
 
     // Copy all Bootstrap SCSS files
     gulp
         .src('./node_modules/bootstrap/scss/**/*.scss')
-        .pipe(gulp.dest(themePath + '/scss/bs4/'));
+        .pipe(gulp.dest(themePath + 'scss/bs4/'));
 
     done();
 });
 
 //Styles
 gulp.task('scss', () => {
-    return gulp.src(themePath + '/scss/style.scss')
+    return gulp.src(themePath + 'scss/style.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer('last 4 version'))
         //.pipe(minifyCSS({ keepSpecialComments: 1, processImport: false }))
@@ -59,9 +59,9 @@ gulp.task('scss', () => {
 
 gulp.task('js', (done) => {
     gulp.src([
-        themePath + '/js/core/jquery/jquery.js',
-        themePath + '/js/core/bootstrap4/bootstrap.bundle.js',
-        themePath + '/js/libs/**/*.js',
+        themePath + 'js/core/jquery/jquery.js',
+        themePath + 'js/core/bootstrap4/bootstrap.bundle.js',
+        themePath + 'js/libs/**/*.js',
     ])
         .pipe(concat('/js/core.js'))
         .pipe(gulp.dest(themePath))
@@ -84,12 +84,12 @@ gulp.task('js', (done) => {
 gulp.task('watch', () => {
 
     // Watch main style.scss file for new inclusions
-    gulp.watch(themePath + '/scss/**/**/*.scss', gulp.series('scss'));
+    gulp.watch(themePath + 'scss/**/**/*.scss', gulp.series('scss'));
 
-    gulp.watch(themePath + '/scss/style.scss', gulp.series('scss'));
+    gulp.watch(themePath + 'scss/style.scss', gulp.series('scss'));
 
     // Watch js files
-    gulp.watch(themePath + '/js/development/**/*.js', gulp.series('js'));
+    gulp.watch(themePath + 'js/development/**/*.js', gulp.series('js'));
 
 });
 
