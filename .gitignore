@@ -1,5 +1,5 @@
 node_modules
-public/wp-config.php
+#public/wp-config.php
 public/wp-content/uploads
 sql
 public/wp-admin/error_log
