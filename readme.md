@@ -1,12 +1,10 @@
-# Acme gallery
-
-Just a Challenge html test
+# Acme gallery WordPress theme
 
 ## Instructions
 
 Clone repo
 
-`git clone https://github.com/dsebao/acme-challenge.git`
+`git clone https://github.com/dsebao/acme-challenge-wp.git`
 
 Install dependencies
 
@@ -14,10 +12,8 @@ Install dependencies
 
 ## Build all the project
 
-Copy dependencies to the project (BS4 & jQuery)
+Copy dependencies to the project (BS4 & jQuery) and compile scss/javascript files
 
 `npm start`
 
-Watch changes for development
-
-`npm dev`
+If you want to make changes install [gulp](https://rkrupnick.github.io/install-gulp.html)

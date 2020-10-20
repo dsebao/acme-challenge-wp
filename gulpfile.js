@@ -95,4 +95,5 @@ gulp.task('watch', () => {
 
 
 // Default task -- runs scss and watch functions
-gulp.task('default', gulp.parallel('assets', 'js', 'scss', 'watch'));
+gulp.task('start', gulp.parallel('assets', 'js', 'scss'));
+gulp.task('default', gulp.parallel('watch'));
